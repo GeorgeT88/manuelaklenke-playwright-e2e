@@ -15,10 +15,12 @@ test.describe('Language Switcher', () => {
     await page.waitForLoadState('networkidle');
   });
 
+  // Confirms the language switcher button is visible in the navbar on page load
   test('language switcher button is visible in the navbar', async ({ page }) => {
     await expect(getLangButton(page)).toBeVisible();
   });
 
+  // Opens the language dropdown and confirms all three supported languages are listed (EN, RO, DE)
   test('language dropdown offers three language options', async ({ page }) => {
     await getLangButton(page).click();
     await expect(page.getByRole('menuitem', { name: 'English' })).toBeVisible();
@@ -26,6 +28,7 @@ test.describe('Language Switcher', () => {
     await expect(page.getByRole('menuitem', { name: 'Deutsch' })).toBeVisible();
   });
 
+  // Selects English from the dropdown and confirms the language button label updates to "EN"
   test('switching to English updates the navbar language button', async ({ page }) => {
     const btn = getLangButton(page);
     await btn.click();
@@ -33,6 +36,7 @@ test.describe('Language Switcher', () => {
     await expect(btn).toContainText('EN');
   });
 
+  // Selects Deutsch from the dropdown and confirms the language button label updates to "DE"
   test('switching to Deutsch updates the navbar language button', async ({ page }) => {
     const btn = getLangButton(page);
     await btn.click();
