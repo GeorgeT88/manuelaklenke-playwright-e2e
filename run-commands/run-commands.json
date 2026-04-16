@@ -1,0 +1,90 @@
+{
+  "project": "manuelaklenke-e2e",
+  "baseURL": "https://manuelaklenke.com",
+  "commands": [
+    {
+      "label": "Run all tests (all browsers, headless)",
+      "command": "npm test",
+      "notes": "Runs all 255 tests across Chromium, Firefox, WebKit, mobile-chrome, mobile-safari"
+    },
+    {
+      "label": "Run all tests with a visible browser window",
+      "command": "npm run test:headed",
+      "notes": "Same as above but opens a real browser window so you can watch the tests execute"
+    },
+    {
+      "label": "Open interactive UI mode",
+      "command": "npm run test:ui",
+      "notes": "Best for development — shows a side-by-side test picker, browser preview, and step-by-step trace"
+    },
+    {
+      "label": "Open the HTML report from the last run",
+      "command": "npm run test:report",
+      "notes": "Opens the Playwright HTML report in your browser; useful after a headless run"
+    },
+    {
+      "label": "Run a specific test file",
+      "command": "npx playwright test tests/<filename>.spec.ts",
+      "examples": [
+        "npx playwright test tests/contact.spec.ts",
+        "npx playwright test tests/language.spec.ts",
+        "npx playwright test tests/visual.spec.ts"
+      ]
+    },
+    {
+      "label": "Run on a specific browser only",
+      "command": "npx playwright test --project=<browser>",
+      "browsers": [
+        "chromium",
+        "firefox",
+        "webkit",
+        "mobile-chrome",
+        "mobile-safari"
+      ],
+      "example": "npx playwright test --project=chromium"
+    },
+    {
+      "label": "Run a specific file on a specific browser (headed)",
+      "command": "npx playwright test tests/<filename>.spec.ts --project=chromium --headed",
+      "example": "npx playwright test tests/language.spec.ts --project=chromium --headed",
+      "notes": "Useful for debugging a single test file in a real browser"
+    },
+    {
+      "label": "Run a single test by name",
+      "command": "npx playwright test --grep \"<test name>\"",
+      "example": "npx playwright test --grep \"language dropdown offers three language options\"",
+      "notes": "Supports regex patterns for matching multiple tests by name"
+    },
+    {
+      "label": "Run visual regression tests",
+      "command": "npx playwright test tests/visual.spec.ts --project=chromium",
+      "notes": "Compares current screenshots against stored baselines in tests/visual.spec.ts-snapshots/"
+    },
+    {
+      "label": "Regenerate visual snapshot baselines",
+      "command": "npx playwright test tests/visual.spec.ts --project=chromium --update-snapshots",
+      "notes": "Run this after intentional UI changes to accept the new appearance as the new baseline"
+    },
+    {
+      "label": "Run tests in debug mode",
+      "command": "npx playwright test --debug",
+      "notes": "Opens Playwright Inspector — lets you step through each action one at a time"
+    },
+    {
+      "label": "Run tests with retries",
+      "command": "npx playwright test --retries=2",
+      "notes": "Retries each failing test up to 2 times before marking it as failed"
+    }
+  ],
+  "testFiles": [
+    { "file": "tests/home.spec.ts",         "description": "Home page load, console errors, main content" },
+    { "file": "tests/about.spec.ts",         "description": "About page load, console errors, main content" },
+    { "file": "tests/contact.spec.ts",       "description": "Contact form fields, validation, submit state" },
+    { "file": "tests/events.spec.ts",        "description": "Events page load, console errors, main content" },
+    { "file": "tests/portfolio.spec.ts",     "description": "Portfolio page, book cover images and external links" },
+    { "file": "tests/navigation.spec.ts",    "description": "Navbar, footer, page-to-page navigation, 404" },
+    { "file": "tests/accessibility.spec.ts", "description": "Skip links, alt text, h1 count on all pages" },
+    { "file": "tests/language.spec.ts",      "description": "Language switcher: button visibility, dropdown, EN/DE switch" },
+    { "file": "tests/visual.spec.ts",        "description": "Full-page screenshot comparison for all 5 pages (Chromium only)" }
+  ]
+}
