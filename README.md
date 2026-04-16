@@ -1,16 +1,16 @@
-# Playwright E2E Tests — manuelaklenke.com
+# 🎭 Playwright E2E Tests — manuelaklenke.com
 
 End-to-end test suite for [manuelaklenke.com](https://manuelaklenke.com), maintained by the QA team. Tests run automatically after every deployment and results are published to GitHub Pages.
 
 ---
 
-## Test Results
+## 📊 Test Results
 
 Latest report: **[https://georget88.github.io/playwright/](https://georget88.github.io/playwright/)**
 
 ---
 
-## Tech Stack
+## 🛠️ Tech Stack
 
 - [Playwright](https://playwright.dev/) — E2E testing framework
 - TypeScript
@@ -19,7 +19,7 @@ Latest report: **[https://georget88.github.io/playwright/](https://georget88.git
 
 ---
 
-## Project Structure
+## 📁 Project Structure
 
 ```
 tests/
@@ -35,7 +35,7 @@ tests/
 
 ---
 
-## Test Coverage
+## ✅ Test Coverage
 
 | File | Tests | What is covered |
 |---|---|---|
@@ -51,7 +51,7 @@ tests/
 
 ---
 
-## Running Tests Locally
+## 🚀 Running Tests Locally
 
 **Install dependencies:**
 ```bash
@@ -81,27 +81,27 @@ npm run test:report
 
 ---
 
-## CI/CD Pipeline
+## ⚙️ CI/CD Pipeline
 
 Tests are triggered automatically after every push to the `main` branch of [GeorgeT88/my-bmad-project](https://github.com/GeorgeT88/my-bmad-project):
 
 ```
-Push to my-bmad-project
+📦 Push to my-bmad-project
         ↓
-Vercel deploys the app (~2 min)
+🌐 Vercel deploys the app (~2 min)
         ↓
-GitHub Actions triggers E2E Tests
+⚡ GitHub Actions triggers E2E Tests
         ↓
-30 tests run against https://manuelaklenke.com
+🎭 30 tests run against https://manuelaklenke.com
         ↓
-HTML report published to GitHub Pages
+📊 HTML report published to GitHub Pages
 ```
 
 Tests can also be triggered manually from **Actions → E2E Tests → Run workflow**.
 
 ---
 
-## Run Name Convention
+## 🏷️ Run Name Convention
 
 | Trigger | Run name |
 |---|---|
@@ -111,7 +111,7 @@ Tests can also be triggered manually from **Actions → E2E Tests → Run workfl
 
 ---
 
-## Known App Issues
+## ⚠️ Known App Issues
 
 The following issues exist in the app and are documented in the tests:
 
