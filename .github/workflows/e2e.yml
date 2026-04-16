@@ -1,12 +1,9 @@
 name: E2E Tests
 
 on:
-  # Triggered by the app repo after Vercel deploys
   repository_dispatch:
     types: [vercel-deploy]
-  # Manual trigger from GitHub UI
   workflow_dispatch:
-  # Nightly safety net at 07:00 UTC
   schedule:
     - cron: '0 7 * * *'
 
@@ -35,10 +32,10 @@ jobs:
       - name: Run E2E tests
         run: npx playwright test --project=chromium
 
-      - name: Upload test report
-        uses: actions/upload-artifact@v4
+      - name: Upload report to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
         if: always()
         with:
-          name: playwright-report
-          path: playwright-report/
-          retention-days: 30
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./playwright-report
+          destination_dir: .
