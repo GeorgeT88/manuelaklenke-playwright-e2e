@@ -1,7 +1,13 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npx playwright *)"
+      "Bash(npx playwright *)",
+      "Bash(gh pr *)",
+      "Bash(gh run *)",
+      "Bash(git remote *)",
+      "Bash(curl -s \"https://api.github.com/repos/GeorgeT88/manuelaklenke-playwright-e2e/actions/runs?per_page=5\")",
+      "Bash(python3 -c ' *)",
+      "Bash(node -e \" let d=''; process.stdin.on\\('data',c=>d+=c\\); process.stdin.on\\('end',\\(\\)=>{ const runs=JSON.parse\\(d\\).workflow_runs||[]; runs.forEach\\(r=>console.log\\('Run #'+r.run_number+': '+r.name+' | event: '+r.event+' | status: '+r.status+' | conclusion: '+\\(r.conclusion||'pending'\\)+' | branch: '+r.head_branch+' | '+r.created_at\\)\\); }\\);\")"
     ]
   }
 }
