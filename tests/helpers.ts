@@ -5,7 +5,6 @@ import type { Page } from '@playwright/test';
  * These are outside the app's control and should not fail tests.
  */
 const IGNORED_ORIGINS = [
-  'ipapi.co',          // IP geolocation — CORS-restricted on free tier, rate-limited (429)
   'vercel.com',        // Analytics — may be blocked by corporate proxies
   'va.vercel-scripts', // Vercel Speed Insights
   'supabase.co',       // Image CDN — Cloudflare cookie rejection is a browser/domain mismatch

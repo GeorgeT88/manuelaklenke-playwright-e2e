@@ -115,11 +115,3 @@ Tests can also be triggered manually from **Actions → E2E Tests → Run workfl
 | Push via app repo | `E2E Tests — triggered by Vercel deploy` |
 | Manual | `E2E Tests — manual run` |
 | Nightly schedule (07:00 UTC) | `E2E Tests — nightly run` |
-
----
-
-## ⚠️ Known App Issues
-
-The following issues exist in the app and are documented in the tests:
-
-- `ipapi.co` CORS errors on all pages — caused by IP-based language detection on a free-tier API
